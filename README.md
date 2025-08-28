@@ -27,6 +27,10 @@ AI-powered file scanning system that ensures safe downloads from the internet.
    npm run cli -- --url https://example.com --pattern "a[href$='.pdf']"
    ```
 
+### Frontend
+- Serve static UI at `http://localhost:${PORT}/` (default 3000)
+- Enter a page URL, optional selector, and max files. It calls `POST /api/scan` and renders results.
+
 ### Environment
 - `CLOUDMERSIVE_API_KEY` — Cloudmersive Virus Scan API key
 - `BYTESCALE_API_KEY` — Bytescale API key

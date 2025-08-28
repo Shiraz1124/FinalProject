@@ -3,8 +3,10 @@ import express from 'express';
 import { extractAndDownload } from './extractor.js';
 import { scanFileAllEngines } from './scan.js';
 import { explainRisk } from './explainer.js';
+import path from 'node:path';
 const app = express();
 app.use(express.json({ limit: '2mb' }));
+app.use(express.static(path.join(process.cwd(), 'public')));
 app.post('/api/scan', async (req, res) => {
     const { url, selector, max = 3 } = req.body || {};
     if (!url) {
